@@ -22,9 +22,9 @@ public class String_Calculator {
 			{
 				if(find.hasNextInt())
 				{
-						number.add(find.nextInt());
-						//StdOut.println("number " + i + ": " + number.get(i));
-						i++;
+					number.add(find.nextInt());
+					//StdOut.println("number " + i + ": " + number.get(i));
+					i++;
 				}
 				else
 					find.next();
