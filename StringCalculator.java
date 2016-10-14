@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Scanner;
+
 import edu.princeton.cs.algs4.*;
 
 public class String_Calculator {
@@ -11,26 +13,26 @@ public class String_Calculator {
 		{
 			int sum = 0;
 			int i = 0;
-			int[] number = new int[2];
+			ArrayList<Integer> number = new ArrayList<Integer>();
 			
 			Scanner find = new Scanner(numbers);
 			find.useDelimiter("[^0-9]+");
 			
 			while(find.hasNext())
 			{
-				if(find.hasNextInt() && i < 2)
+				if(find.hasNextInt())
 				{
-					number[i] = find.nextInt();
-					StdOut.println("number " + i + ": " + number[i]);
+					number.add(find.nextInt());
+					StdOut.println("number " + i + ": " + number.get(i));
 					i++;
 				}
 				else
 					find.next();
 			}
 			
-			for (int j = 0; j < 2; j++)
+			for (int j = 0; j < number.size(); j++)
 			{
-				sum = sum + number[j];
+				sum = sum + number.get(j);
 			}
 			
 			return sum;
