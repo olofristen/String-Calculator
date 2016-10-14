@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import edu.princeton.cs.algs4.*;
 
 public class String_Calculator {
@@ -24,7 +23,7 @@ public class String_Calculator {
 				if(find.hasNextInt())
 				{
 						number.add(find.nextInt());
-						StdOut.println("number " + i + ": " + number.get(i));
+						//StdOut.println("number " + i + ": " + number.get(i));
 						i++;
 				}
 				else
@@ -56,7 +55,7 @@ public class String_Calculator {
 		Scanner scanner = new Scanner(System.in);
 		String numbers = scanner.nextLine();
 		
-		StdOut.println("The string: " + numbers);
+		//StdOut.println("The string: " + numbers);
 		
 		int sum = Add(numbers);
 		StdOut.println("Sum: " + sum);
