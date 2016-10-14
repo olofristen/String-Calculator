@@ -14,17 +14,18 @@ public class String_Calculator {
 			int sum = 0;
 			int i = 0;
 			ArrayList<Integer> number = new ArrayList<Integer>();
+			String negatives = "";
 			
 			Scanner find = new Scanner(numbers);
-			find.useDelimiter("[^0-9]+");
+			find.useDelimiter("[^-?0-9]+");
 			
 			while(find.hasNext())
 			{
 				if(find.hasNextInt())
 				{
-					number.add(find.nextInt());
-					StdOut.println("number " + i + ": " + number.get(i));
-					i++;
+						number.add(find.nextInt());
+						StdOut.println("number " + i + ": " + number.get(i));
+						i++;
 				}
 				else
 					find.next();
@@ -32,7 +33,18 @@ public class String_Calculator {
 			
 			for (int j = 0; j < number.size(); j++)
 			{
-				sum = sum + number.get(j);
+				if ((number.get(j) > 0) && (number.get(j) <= 1000))
+					sum = sum + number.get(j);
+				else if (number.get(j) < 0)
+					if(negatives.isEmpty())
+						negatives = negatives + number.get(j);
+					else
+						negatives = negatives + ", " + number.get(j);		
+			}
+			
+			if(!negatives.isEmpty())
+			{
+				throw new IllegalArgumentException("Negatives not allowed: " + negatives);
 			}
 			
 			return sum;
